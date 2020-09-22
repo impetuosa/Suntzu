@@ -49,11 +49,11 @@ STZIcons class >> iconFor: anElement [
 	aClass = JinMacro ifTrue: [ ^ self iconMacroIcon ].
 	aClass = JinModule ifTrue: [ ^ self iconModuleIcon ].
 
-	aClass = JinAngularComponent ifTrue: [ ^ self angularIcon ].
-	aClass = JinAngularModule ifTrue: [ ^ self packageIcon ].
-	aClass = JinAngularComponentBehaviour ifTrue: [ 
+	aClass = MOAngularComponent ifTrue: [ ^ self angularIcon ].
+	aClass = MOAngularModule ifTrue: [ ^ self packageIcon ].
+	aClass = MOAngularComponentBehaviour ifTrue: [ 
 		^ self typescriptIcon ].
-	aClass = JinAngularComponentTemplate ifTrue: [ ^ self indexIcon ].
+	aClass = MOAngularComponentTemplate ifTrue: [ ^ self indexIcon ].
 	
 		aClass = MOAngularProtoComponent ifTrue: [ ^ self angularIcon asGrayScale].
 		aClass = MOAngularProtoComponentBehavior ifTrue: [ 

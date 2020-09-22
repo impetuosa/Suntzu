@@ -59,9 +59,9 @@ STZDashboard >> fullMigrateAll: aCollection [
 	path := angularExplorer pages reversed.
 	modulePage := path detect: [ :p | 
 		              p selectedItems anySatisfy: [ :i | 
-			              i isKindOf: JinAngularModule ] ].
+			              i isKindOf: MOAngularModule ] ].
 	selectedModule := modulePage selectedItems detect: [ :i | 
-		                  i isKindOf: JinAngularModule ].
+		                  i isKindOf: MOAngularModule ].
 	migrator := STZMigrationManager new.
 	migrator
 		registerElements: aCollection;
@@ -232,7 +232,7 @@ STZDashboard >> openAngularProject: aFileReference [
 				angularModel := nil ]
 			ifFalse: [ ^ self ] ].
 
-	angularModel := JinAngularScheme onPath: aFileReference.
+	angularModel := MOAngularScheme onPath: aFileReference.
 
 
 	angularExplorer setRootModel: angularModel
