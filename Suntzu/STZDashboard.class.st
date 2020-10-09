@@ -139,6 +139,16 @@ STZDashboard >> initializeWindow: aWindowPresenter [
 	aWindowPresenter whenWillCloseDo: [ self windowClosing ].
 ]
 
+{ #category : #'as yet unclassified' }
+STZDashboard >> inspectCasinoModelFor: aCollection [
+
+	| man |
+	man := STZMigrationManager new.
+
+	man registerElements: aCollection.
+	man loadCasinoModel inspect
+]
+
 { #category : #initialization }
 STZDashboard >> newProjectExplorer [
 

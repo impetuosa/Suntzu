@@ -170,6 +170,7 @@ STZInspectorBuilder >> tableMenuForms: aTable [
 						  shortcut: $i meta;
 						  description: 'Inspect';
 						  action: [ aTable selectedItems inspect ] ];
+		
 				  addItem: [ :anItem | 
 					  anItem
 						  name: 'Selective Migration';
@@ -194,6 +195,12 @@ STZInspectorBuilder >> tableMenuProject: aTable [
 						  name: 'Move to angular';
 						  description: 'Migrate UI As new Component';
 						  action: [ owner fullMigrateAll: aTable selectedItems ] ];
+								 addItem: [ :anItem | 
+					  anItem
+						  name: 'Casino Model viewer';
+						  shortcut: $i meta;
+						  description: 'Inspect';
+						  action: [ owner inspectCasinoModelFor:aTable selectedItems  ] ];
 				  addItem: [ :anItem | 
 					  anItem
 						  name: 'Selective Migration';

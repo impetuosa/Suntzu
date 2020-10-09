@@ -13,9 +13,7 @@ Class {
 { #category : #'as yet unclassified' }
 STZMigrationManager >> calculateComponents [
 
-	casinoModel := JinCasinoPartialModelCreator
-		               createModelOnSpecific: itemsToMigrate
-		               named: 'MigrationProcess'.
+	casinoModel := self loadCasinoModel. 
 	angularModel := MOCasinoToAngularModel
 		                loadFrom: casinoModel
 		                into: destination
@@ -24,6 +22,14 @@ STZMigrationManager >> calculateComponents [
 { #category : #accessing }
 STZMigrationManager >> destination: aJinAngularModule [ 
 	destination := aJinAngularModule
+]
+
+{ #category : #'as yet unclassified' }
+STZMigrationManager >> loadCasinoModel [
+
+	^ JinCasinoPartialModelCreator
+		  createModelOnSpecific: itemsToMigrate
+		  named: 'MigrationProcess'
 ]
 
 { #category : #'as yet unclassified' }
