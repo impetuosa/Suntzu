@@ -288,6 +288,11 @@ STZInspectorBuilder >> visitAngularProject: aJinAngularProject [
 ]
 
 { #category : #visiting }
+STZInspectorBuilder >> visitAngularProtoClass: anAngularProtoClass [
+	self visitAngularComponentBehavior: anAngularProtoClass 
+]
+
+{ #category : #visiting }
 STZInspectorBuilder >> visitAngularProtoComponent: aJinAngularProtoComponent [
 
 	self visitAngularComponent: aJinAngularProtoComponent

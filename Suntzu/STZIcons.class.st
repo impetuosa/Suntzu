@@ -35,33 +35,38 @@ STZIcons class >> gtInspectorIconsIn: composite [
 
 { #category : #'GT-InspectorExtensions' }
 STZIcons class >> iconFor: anElement [
-
 	| aClass |
 	aClass := anElement class = JinPath
-		          ifTrue: [ 
-		          ((JinPath slotNamed: 'object') read: anElement) class ]
-		          ifFalse: [ anElement class ].
-
-	aClass = JinForm ifTrue: [ ^ self iconFormIcon ].
-	aClass = JinTable ifTrue: [ ^ self iconTableIcon ].
-	aClass = JinReport ifTrue: [ ^ self iconReportIcon ].
-	aClass = JinQuery ifTrue: [ ^ self iconQueryIcon ].
-	aClass = JinMacro ifTrue: [ ^ self iconMacroIcon ].
-	aClass = JinModule ifTrue: [ ^ self iconModuleIcon ].
-
-	aClass = MOAngularComponent ifTrue: [ ^ self angularIcon ].
-	aClass = MOAngularModule ifTrue: [ ^ self packageIcon ].
-	aClass = MOAngularComponentBehaviour ifTrue: [ 
-		^ self typescriptIcon ].
-	aClass = MOAngularComponentTemplate ifTrue: [ ^ self indexIcon ].
-	
-		aClass = MOAngularProtoComponent ifTrue: [ ^ self angularIcon asGrayScale].
-		aClass = MOAngularProtoComponentBehavior ifTrue: [ 
-		^ self typescriptIcon asGrayScale ].
-	aClass = MOAngularProtoComponentTemplate ifTrue: [ ^ self indexIcon asGrayScale  ].
-
-
-
+		ifTrue: [ ((JinPath slotNamed: 'object') read: anElement) class ]
+		ifFalse: [ anElement class ].
+	aClass = JinForm
+		ifTrue: [ ^ self iconFormIcon ].
+	aClass = JinTable
+		ifTrue: [ ^ self iconTableIcon ].
+	aClass = JinReport
+		ifTrue: [ ^ self iconReportIcon ].
+	aClass = JinQuery
+		ifTrue: [ ^ self iconQueryIcon ].
+	aClass = JinMacro
+		ifTrue: [ ^ self iconMacroIcon ].
+	aClass = JinModule
+		ifTrue: [ ^ self iconModuleIcon ].
+	aClass = MOAngularComponent
+		ifTrue: [ ^ self angularIcon ].
+	aClass = MOAngularModule
+		ifTrue: [ ^ self packageIcon ].
+	aClass = MOAngularComponentBehaviour
+		ifTrue: [ ^ self typescriptIcon ].
+	aClass = MOAngularComponentTemplate
+		ifTrue: [ ^ self indexIcon ].
+	aClass = MOAngularProtoComponent
+		ifTrue: [ ^ self angularIcon asGrayScale ].
+	aClass = MOAngularProtoComponentBehavior
+		ifTrue: [ ^ self typescriptIcon asGrayScale ].
+	aClass = MOAngularProtoComponentTemplate
+		ifTrue: [ ^ self indexIcon asGrayScale ].
+	aClass = MOAngularProtoClass
+		ifTrue: [ ^ self typescriptIcon asGrayScale ].
 	^ self iconTableIcon
 ]
 

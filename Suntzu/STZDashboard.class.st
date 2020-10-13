@@ -126,6 +126,11 @@ STZDashboard >> initializePresenters [
 				 icon: (self theme iconNamed: #smallOpen);
 				 help: 'Open core web 3 ';
 				 action: [ self openCW3];
+				 yourself);addItemRight: (SpToolbarButtonPresenter new
+				 label: 'NWA';
+				 icon: (self theme iconNamed: #smallOpen);
+				 help: 'Open northwond angular';
+				 action: [ self openNWA];
 				 yourself).
 	projectExplorer := self newProjectExplorer .
 	angularExplorer := self newProjectExplorer .
@@ -251,6 +256,11 @@ STZDashboard >> openAngularProject: aFileReference [
 { #category : #initialization }
 STZDashboard >> openCW3 [ 
 	self openAngularProject: 'D:\Users\Santiago.BRAGAGNOLO\Documents\git-repositories\coreweb3\export' asFileReference 
+]
+
+{ #category : #initialization }
+STZDashboard >> openNWA [
+	self openAngularProject: 'D:\Users\Santiago.BRAGAGNOLO\Documents\git-repositories\northwind\' asFileReference 
 ]
 
 { #category : #initialization }

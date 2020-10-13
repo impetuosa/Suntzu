@@ -62,6 +62,11 @@ STZViewportPageBuilder >> visitAngularModule: aJinAngularModule [
 ]
 
 { #category : #visiting }
+STZViewportPageBuilder >> visitAngularProtoClass: anAngularProtoClass [
+	self visitAngularComponentBehavior: anAngularProtoClass
+]
+
+{ #category : #visiting }
 STZViewportPageBuilder >> visitAngularProtoComponent: aJinAngularProtoComponent [
 
 	self visitAngularComponent: aJinAngularProtoComponent
