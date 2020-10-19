@@ -26,10 +26,10 @@ STZMigrationManager >> destination: aJinAngularModule [
 
 { #category : #'as yet unclassified' }
 STZMigrationManager >> loadCasinoModel [
-
-	^ JinCasinoPartialModelCreator
-		  createModelOnSpecific: itemsToMigrate
-		  named: 'MigrationProcess'
+	^ MOCasinoPartialModelCreator
+		createModelOnSpecific: itemsToMigrate
+		inTheContextOf: destination
+		named: 'MigrationProcess'
 ]
 
 { #category : #'as yet unclassified' }
