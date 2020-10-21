@@ -12,11 +12,14 @@ Class {
 
 { #category : #'as yet unclassified' }
 STZMigrationManager >> calculateComponents [
-
-	casinoModel := self loadCasinoModel. 
 	angularModel := MOCasinoToAngularModel
-		                loadFrom: casinoModel
-		                into: destination
+		loadFrom: casinoModel
+		into: destination
+]
+
+{ #category : #'as yet unclassified' }
+STZMigrationManager >> casinoModel: aJinCasinoProject [ 
+	casinoModel := aJinCasinoProject
 ]
 
 { #category : #accessing }
